@@ -3,7 +3,7 @@ public class Katt {
     private int chipnummer;
     private String ras;
 
-    public Katt(String name, int chipnummer, String ras) {
+    public Katt(String namn, int chipnummer, String ras) {
         this.namn = namn;
         this.chipnummer = chipnummer;
         this.ras = ras;
