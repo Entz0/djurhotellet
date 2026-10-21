@@ -4,6 +4,16 @@ import java.util.List;
 public class KattHotell {
     private List<Katt> katter = new ArrayList<>();
 
+    public boolean checkaUt(int chipnummer) {
+        for (Katt k : katter) {
+            if (k.getChipnummer() == chipnummer) {
+                katter.remove(k);
+                return true;
+            }
+        }
+        return false;
+    }
+
     public Katt hittaNamn(String namn) {
         for (Katt k : katter) {
             if (k.getNamn().equalsIgnoreCase(namn)) {

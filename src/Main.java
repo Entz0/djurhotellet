@@ -16,13 +16,13 @@ public class Main {
         KattHotell hotell = new KattHotell();
         int val = 0;
 
-        while (val != 4) {
+        while (val != 5) {
             System.out.println("\n--- Tass & Mys Meny ---");
             System.out.println("1. Checka in katt");
             System.out.println("2. Lista alla incheckade katter");
             System.out.println("3. Sök katt på namn");
-            System.out.println("4. Avsluta programmet");
-            System.out.print("Välj: ");
+            System.out.println("4. Checka ut katt");
+            System.out.println("5. Avsluta programmet");
 
             val = scanner.nextInt();
             scanner.nextLine();
@@ -53,9 +53,23 @@ public class Main {
                 }
 
             } else if (val == 4) {
+                System.out.print("Ange chipnummer på katten som ska checkas ut: ");
+                int utcheckningsChip = scanner.nextInt();
+                scanner.nextLine(); // 💡 Rensa Enter-trycket från kön!
+
+                // Vi frågar hotellet om det gick att ta bort katten
+                boolean gickDetBra = hotell.checkaUt(utcheckningsChip);
+
+                if (gickDetBra) {
+                    System.out.println("Katten är utcheckad!");
+                } else {
+                    System.out.println("Ingen katt med det chipnumret hittades.");
+                }
+
+            } else if (val == 5) {
                 System.out.println("Avslutar programmet. Välkommen åter!");
             } else {
-                System.out.println("Ogiltigt val, försök igen med siffrorna 1-4.");
+                System.out.println("Ogiltigt val, försök igen.");
             }
         }
     }
