@@ -4,6 +4,15 @@ import java.util.List;
 public class KattHotell {
     private List<Katt> katter = new ArrayList<>();
 
+    public Katt hittaNamn(String namn) {
+        for (Katt k : katter) {
+            if (k.getNamn().equalsIgnoreCase(namn)) {
+                return k;
+            }
+        }
+        return null;
+    }
+
     public void listaAlla() {
         System.out.println("--- Dagens upprop ---");
 
